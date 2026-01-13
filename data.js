@@ -25,16 +25,16 @@ noises[0] = 'meow';
 noises.push('weew' + '(the tiniest mew)');
 noises.unshift('wow');
 noises.push('purr');
-console.log(noises.length);
-console.log(noises.length -1);
-console.log(noises);
+// console.log(noises.length);
+// console.log(noises.length -1);
+// console.log(noises);
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 animal.noises = noises;
 noises.push('caw');
-console.log(animal);
+// console.log(animal);
 
 /* *******************************************************************
  * Step 4 - Review
@@ -71,15 +71,26 @@ var duck = {
   species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh']
 };
 animals.push(duck);
-console.log(animals);
+// console.log(animals);
+var greyParrot = {
+  species: 'bird', name: 'Apollo', noises: ['glask', 'what made of?', 'shrok', 'fresh water'] 
+};
+animals.push(greyParrot);
 
+var tarantula = {
+  species: 'spider', name: 'Ramona', noises: [null]
+};
+animals.push(tarantula);
+
+console.log(animals);
+console.log(animals.length);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
-
+// i choose an array because we need to hold a list and arrays, being index-ordered containers, are well-suited for lists
+var friends = [];
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
