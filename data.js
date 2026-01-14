@@ -25,16 +25,16 @@ noises[0] = 'meow';
 noises.push('weew' + '(the tiniest mew)');
 noises.unshift('wow');
 noises.push('purr');
-// console.log(noises.length);
-// console.log(noises.length -1);
-// console.log(noises);
+console.log(noises.length);
+console.log(noises.length -1);
+console.log(noises);
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 animal.noises = noises;
 noises.push('caw');
-// console.log(animal);
+console.log(animal);
 
 /* *******************************************************************
  * Step 4 - Review
@@ -65,13 +65,13 @@ noises.push('caw');
 //////////////////////////////////////////////////////////////////////
 var animals = [];
 animals.push(animal);
-// console.log(animals);
+console.log(animals);
 
 var duck = {
   species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh']
 };
 animals.push(duck);
-// console.log(animals);
+console.log(animals);
 var greyParrot = {
   species: 'bird', name: 'Apollo', noises: ['glask', 'what made of?', 'shrok', 'fresh water'] 
 };
@@ -91,6 +91,43 @@ console.log(animals.length);
 
 // i choose an array because we need to hold a list and arrays, being index-ordered containers, are well-suited for lists
 var friends = [];
+
+/* 
+7.5
+I: function takes animals array
+O: function returns a random index of the input array
+C: function uses Math.random
+*/
+// declare getRandom function, take animals array as input and return a random index from that array
+function getRandom(array) {
+  var i = Math.floor(Math.random() * array.length);
+  return i;
+}
+
+console.log(getRandom(animals));
+// get a random animal from the animals array and add its name to the friends array
+// function takes the getRandom function, the animals array and friends array as inputs
+// function passes the animals array to the getRandom function, accesses the name parameter at the index associated with that function's return value
+// and returns the name value added to the friends array
+
+function addName(func, array1, array2) {
+  var i = func(array1);
+  array2.push(array1[i]['name']);
+  return array2;
+}
+console.log(addName(getRandom, animals, friends));
+console.log(friends);
+
+animals[0].friends = friends;
+console.log(animals);
+
+// function addProp(array, object, key) {
+  // array[object].push(key);
+  // return object;
+// }
+// console.log(addProp(animals, animals[2], friends));
+
+
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
